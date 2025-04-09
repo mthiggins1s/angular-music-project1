@@ -8,9 +8,6 @@ import { Component, computed, input, Input } from '@angular/core';
   styleUrl: './song.component.css'
 })
 export class SongComponent {
-  // @Input({required: true}) cover!: string;
-  // @Input({required: true}) name!: string;
-
   cover = input.required<string>();
   name = input.required<string>();
 
