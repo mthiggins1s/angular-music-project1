@@ -1,0 +1,37 @@
+.app-header {
+  position: relative;
+  padding: 2rem 1rem;
+  background-color: #121212;
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Glowing red bar that pulses quietly */
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgb(124, 159, 173);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 2px rgb(255, 255, 255), 0 0 6px rgb(255, 255, 255);
+  }
+  50% {
+    box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255);
+  }
+}
