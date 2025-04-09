@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, computed, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-song',
@@ -8,12 +8,15 @@ import { Component, Input } from '@angular/core';
   styleUrl: './song.component.css'
 })
 export class SongComponent {
-  @Input({required: true}) cover!: string;
-  @Input({required: true}) name!: string;
+  // @Input({required: true}) cover!: string;
+  // @Input({required: true}) name!: string;
 
-  get imagePath() {
-    return 'assets/album-cover/' + this.cover;
-  }
+  cover = input.required<string>();
+  name = input.required<string>();
+
+  imagePath = computed(() => {
+    return 'assets/album-cover/' + this.cover();
+  })
 
   onSelectSong() {}
 }
