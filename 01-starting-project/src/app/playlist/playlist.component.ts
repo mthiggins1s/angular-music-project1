@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { SongComponent } from '../song/song.component';
 import { CommonModule } from '@angular/common';
-import { songs_list } from '../songs-list';
+import { Song, songs_list } from '../songs-list';
 
 @Component({
   selector: 'app-playlist',
@@ -11,11 +11,10 @@ import { songs_list } from '../songs-list';
   styleUrls: ['./playlist.component.css']
 })
 export class PlaylistComponent {
-  selectedSong = signal<{ cover: string, name: string } | null>(null);
+  selectedSong = signal<Song | null>(null);
+  songs: Song[] = songs_list;
 
-  songs = songs_list;
-
-  onSelect(song: { name: string, cover: string }) {
+  onSelect(song: Song) {
     this.selectedSong.set(song);
   }
 

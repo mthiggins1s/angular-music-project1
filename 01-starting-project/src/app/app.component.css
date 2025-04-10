@@ -6,16 +6,6 @@ main {
   grid-auto-flow: row;
   gap: 2rem;
 }
-
-#songs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 0.5rem;
-  overflow: auto;
-}
-
 #fallback {
   font-weight: bold;
   font-size: 1.15rem;
@@ -31,10 +21,5 @@ main {
 
   #songs {
     flex-direction: column;
-  }
-
-  #fallback {
-    font-size: 1.5rem;
-    text-align: left;
   }
 }

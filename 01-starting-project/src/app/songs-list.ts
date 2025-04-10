@@ -1,3 +1,9 @@
+export interface Song {
+  id: string;
+  name: string;
+  cover: string;
+}
+
 export const songs_list = [
   {
     id: 'u1',
