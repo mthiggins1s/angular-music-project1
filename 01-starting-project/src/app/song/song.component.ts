@@ -1,4 +1,5 @@
-import { Component, computed, input, Input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
+import { songs_list } from '../songs-list';
 
 @Component({
   selector: 'app-song',
@@ -13,7 +14,9 @@ export class SongComponent {
 
   imagePath = computed(() => {
     return 'assets/album-cover/' + this.cover();
-  })
+  });
+
+  songs = songs_list;
 
   onSelectSong() {}
 }

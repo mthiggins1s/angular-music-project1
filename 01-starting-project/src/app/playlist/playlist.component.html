@@ -1,0 +1,21 @@
+<div class="playlist-container">
+  <div class="song-list">
+    <app-song
+      *ngFor="let song of songs"
+      [name]="song.name"
+      [cover]="song.cover"
+      (click)="onSelect(song)">
+    </app-song>
+  </div>
+
+  <div class="music-player" *ngIf="selectedSong() as song">
+    <h3>{{ song.name }}</h3>
+    <img [src]="'assets/album-cover/' + song.cover" alt="Cover" />
+    <div class="controls">
+      <button>&laquo;</button>
+      <button>&#9658;</button>
+      <button>&raquo;</button>
+    </div>
+    <button (click)="onClosePlayer()">Close</button>
+  </div>
+</div>
