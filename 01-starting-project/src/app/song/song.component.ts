@@ -1,5 +1,4 @@
-import { Component, computed, input } from '@angular/core';
-import { songs_list } from '../songs-list';
+import { Component, computed, input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-song',
@@ -16,7 +15,9 @@ export class SongComponent {
     return 'assets/album-cover/' + this.cover();
   });
 
-  onSelectSong() {
+  @Output() songSelected = new EventEmitter<void>();
 
+  onSelectSong() {
+    this.songSelected.emit();
   }
 }

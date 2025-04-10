@@ -4,7 +4,8 @@
       *ngFor="let song of songs"
       [name]="song.name"
       [cover]="song.cover"
-      (click)="onSelect(song)">
+      (songSelected)="onSelect(song)"
+    >
     </app-song>
   </div>
 
@@ -12,9 +13,9 @@
     <h3>{{ song.name }}</h3>
     <img [src]="'assets/album-cover/' + song.cover" alt="Cover" />
     <div class="controls">
-      <button>&laquo;</button>
-      <button>&#9658;</button>
-      <button>&raquo;</button>
+      <button>◁</button>
+      <button>▶</button>
+      <button>▷</button>
     </div>
     <button (click)="onClosePlayer()">Close</button>
   </div>
