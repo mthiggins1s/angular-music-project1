@@ -15,4 +15,8 @@ export class SongComponent {
   imagePath = computed(() => {
     return 'assets/album-cover/' + this.cover();
   });
+
+  onSelectSong() {
+
+  }
 }
